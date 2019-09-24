@@ -9,7 +9,11 @@ const breedDetailsFromFile = function(breed, callback) {
   fs.readFile(`./data/${breed}.txt`, 'utf8', (error, data) => {
 
     console.log('Callback: I have the data!');
-    if (!error) callback(data);
+    if (!error) {
+      callback(data);
+    } else {
+      callback(undefined);
+    }
   });
 };
 
